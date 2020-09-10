@@ -11,6 +11,12 @@ textarea{
   color: #000000;
   border-left: 1px solid black;
   padding: 10px;
+  height: 100%;
+  width: 100%;
+}
+/* fix the focus so nighing happens when clicked */
+textarea:focus{
+  border-color: transparent;
 }
 
 .jumbotron {
@@ -31,7 +37,7 @@ textarea{
 }
 
 .row {
-  white-space: pre-wrap;
+  /* white-space: pre-wrap; */
   height: 80px;
   border-top: 1px solid white;;
 }
@@ -61,6 +67,8 @@ textarea{
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+  height: 100%;
+  width: 100%;
   background-color: #06AED5;
   color: white;
 }
