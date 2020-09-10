@@ -13,5 +13,6 @@ var update = function(){
 // update every second
 setInterval(update, 1000);
 
+// save imputs to local storage
 
 })
