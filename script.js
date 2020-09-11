@@ -11,15 +11,18 @@ var save2pm = $(".2pm");
 var save3pm = $(".3pm");
 var save4pm = $(".4pm");
 var save5pm = $(".5pm");
-var input9am = $("#9am");
-var input10am = $("#10am");
-var input11am = $("#11am");
-var input12pm = $("#12pm");
-var input1pm = $("#1pm");
-var input2pm = $("#2pm");
-var input3pm = $("#3pm");
-var input4pm = $("#4pm");
-var input5pm = $("#5pm");
+var input9am = $("#9");
+var input10am = $("#10");
+var input11am = $("#11");
+var input12pm = $("#12");
+var input1pm = $("#13");
+var input2pm = $("#14");
+var input3pm = $("#15");
+var input4pm = $("#16");
+var input5pm = $("#17");
+var inputAll = $(".text")
+
+var inputs = [input9am, input10am, input11am, input12pm, input1pm, input2pm, input3pm, input4pm, input5pm]
 
 
 
@@ -38,14 +41,44 @@ var populateSchedule = function(){
 
 populateSchedule();
 
+
+var objDate = new Date();
+var hours = objDate.getHours();
+
+
+console.log(objDate);
+console.log(hours);
+console.log(input9am);
+
+
+
 $(document).ready(function(){
 
+    var updateSlots = function(){
+        for (var i = 0; i < inputAll.length; i++) {
+            // console.log(inputAll);
+            // console.log(inputAll[i])
+            // console.log(inputAll[i].id)
+            if (parseInt(inputs[i][0].id) === hours) {
+                inputs[i].addClass("present");
+            }
+            else if (parseInt(inputs[i][0].id) < hours) {
+                inputs[i].addClass("past");
+            }
+            else {
+                inputs[i].addClass("future");
+            }
+        }
+
+    }
+    updateSlots();
 // display current date and time on scheduler
 var update = function(){
-    date.text(moment().format('MMMM Do YYYY, h:mm:ss a'));
+    date.text(moment().format('dddd, MMMM Do'));
 }
 // update every second
 setInterval(update, 1000);
+// setInterval(updateSlots, 60000)
 
 // save imputs to local storage
 save9am.on("click", function(event){
