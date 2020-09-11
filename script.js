@@ -2,15 +2,15 @@
  * DOM Variables
  */
 var date = $("#currentDay");
-var save9am = $(".9am");
-var save10am = $(".10am");
-var save11am = $(".11am");
-var save12pm = $(".12pm");
-var save1pm = $(".1pm");
-var save2pm = $(".2pm");
-var save3pm = $(".3pm");
-var save4pm = $(".4pm");
-var save5pm = $(".5pm");
+var save9am = $(".9");
+var save10am = $(".10");
+var save11am = $(".11");
+var save12pm = $(".12");
+var save1pm = $(".13");
+var save2pm = $(".14");
+var save3pm = $(".15");
+var save4pm = $(".16");
+var save5pm = $(".17");
 var input9am = $("#9");
 var input10am = $("#10");
 var input11am = $("#11");
@@ -22,9 +22,14 @@ var input4pm = $("#16");
 var input5pm = $("#17");
 var inputAll = $(".text")
 
+/**
+ * Variables
+ */
+// an array of inputs
 var inputs = [input9am, input10am, input11am, input12pm, input1pm, input2pm, input3pm, input4pm, input5pm]
-
-var saveBtn = [save9am, save10am, save11am, save12pm, save1pm, save2pm, save3pm, save4pm]
+// current date and time
+var objDate = new Date();
+var hours = objDate.getHours();
 
 
 
@@ -37,48 +42,39 @@ var populateSchedule = function(){
 
 populateSchedule();
 
-
-var objDate = new Date();
-var hours = objDate.getHours();
-
-
-console.log(objDate);
-console.log(hours);
-console.log(input9am);
-
-
-
+//This all begins when document is ready
 $(document).ready(function(){
-
+    // function to update the class of timeslot based on current local time
     var updateSlots = function(){
         for (var i = 0; i < inputAll.length; i++) {
-            // console.log(inputAll);
-            // console.log(inputAll[i])
-            // console.log(inputAll[i].id)
+            // if the time slot is the same as curent time, class is present
             if (parseInt(inputs[i][0].id) === hours) {
                 inputs[i].addClass("present");
             }
+            // clas of past is assigned if its in the past
             else if (parseInt(inputs[i][0].id) < hours) {
                 inputs[i].addClass("past");
             }
+            // otherwise the class of future is assigned
             else {
                 inputs[i].addClass("future");
             }
         }
 
     }
+    //call this updateSlot function
     updateSlots();
-// display current date and time on scheduler
+// display current date and day on scheduler
 var update = function(){
     date.text(moment().format('dddd, MMMM Do'));
 }
-// update every second
+
+// update time every second
 setInterval(update, 1000);
-// update every 10 seconds
+// update time slots every 10 seconds
 setInterval(updateSlots, 10000)
 
-console.log(save9am)
-// save imputs to local storage
+// when user clicks a save button, it saves value to local storage
 save9am.on("click", function(event){
     event.preventDefault();
     localStorage.setItem("9", JSON.stringify($(input9am).val()));
@@ -116,10 +112,5 @@ save5pm.on("click", function(event){
     localStorage.setItem("17", JSON.stringify($(input5pm).val()));
 })
 
+
 })
-
-// $(document).on("click", ".saveBtn", function(event){
-//     event.preventDefault();
-//     console.log("this: " + JSON.stringify($(this)));
-
-// })
