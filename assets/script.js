@@ -21,7 +21,6 @@ var input3pm = $("#15");
 var input4pm = $("#16");
 var input5pm = $("#17");
 var inputAll = $(".text");
-
 /**
  * Variables
  */
@@ -40,17 +39,21 @@ var inputs = [
 // current date and time
 var objDate = new Date();
 var hours = objDate.getHours();
-
-var populateSchedule = function () {
-  for (var i = 0; i < inputAll.length; i++) {
-    inputs[i].text(JSON.parse(localStorage.getItem(inputs[i][0].id)));
-  }
-};
-
-populateSchedule();
-
+/**
+ * Function Definitions
+ */
 //This all begins when document is ready
 $(document).ready(function () {
+  // function to display current date and day on scheduler
+  var update = function () {
+    date.text(moment().format("dddd, MMMM Do"));
+  };
+  // function that populates saved events to the schedule
+  var populateSchedule = function () {
+    for (var i = 0; i < inputAll.length; i++) {
+      inputs[i].text(JSON.parse(localStorage.getItem(inputs[i][0].id)));
+    }
+  };
   // function to update the class of timeslot based on current local time
   var updateSlots = function () {
     for (var i = 0; i < inputAll.length; i++) {
@@ -68,18 +71,20 @@ $(document).ready(function () {
       }
     }
   };
+  /**
+   * Function Definitions
+   */
+  // populate schedule from local storage
+  populateSchedule();
   //call this updateSlot function
   updateSlots();
-  // display current date and day on scheduler
-  var update = function () {
-    date.text(moment().format("dddd, MMMM Do"));
-  };
-
   // update time every second
   setInterval(update, 1000);
   // update time slots every 10 seconds
   setInterval(updateSlots, 10000);
-
+  /**
+   * Event Listeners
+   */
   // when user clicks a save button, it saves value to local storage
   save9am.on("click", function (event) {
     event.preventDefault();
