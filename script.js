@@ -78,7 +78,7 @@ var update = function(){
 }
 // update every second
 setInterval(update, 1000);
-// setInterval(updateSlots, 60000)
+setInterval(updateSlots, 60000)
 
 // save imputs to local storage
 save9am.on("click", function(event){
