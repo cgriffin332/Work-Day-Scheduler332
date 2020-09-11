@@ -24,19 +24,15 @@ var inputAll = $(".text")
 
 var inputs = [input9am, input10am, input11am, input12pm, input1pm, input2pm, input3pm, input4pm, input5pm]
 
+var saveBtn = [save9am, save10am, save11am, save12pm, save1pm, save2pm, save3pm, save4pm]
+
 
 
 
 var populateSchedule = function(){
-    input9am.text(JSON.parse(localStorage.getItem("event9am")));
-    input10am.text(JSON.parse(localStorage.getItem("event10am")));
-    input11am.text(JSON.parse(localStorage.getItem("event11am")));
-    input12pm.text(JSON.parse(localStorage.getItem("event12pm")));
-    input1pm.text(JSON.parse(localStorage.getItem("event1pm")));
-    input2pm.text(JSON.parse(localStorage.getItem("event2pm")));
-    input3pm.text(JSON.parse(localStorage.getItem("event3pm")));
-    input4pm.text(JSON.parse(localStorage.getItem("event4pm")));
-    input5pm.text(JSON.parse(localStorage.getItem("event5pm")));
+    for (var i = 0; i < inputAll.length; i++) {
+    inputs[i].text(JSON.parse(localStorage.getItem(inputs[i][0].id)));
+    }
 }
 
 populateSchedule();
@@ -78,44 +74,52 @@ var update = function(){
 }
 // update every second
 setInterval(update, 1000);
-setInterval(updateSlots, 60000)
+// update every 10 seconds
+setInterval(updateSlots, 10000)
 
+console.log(save9am)
 // save imputs to local storage
 save9am.on("click", function(event){
     event.preventDefault();
-    localStorage.setItem("event9am", JSON.stringify($(input9am).val()));
+    localStorage.setItem("9", JSON.stringify($(input9am).val()));
 })
 save10am.on("click", function(event){
     event.preventDefault();
-    localStorage.setItem("event10am", JSON.stringify($(input10am).val()));
+    localStorage.setItem("10", JSON.stringify($(input10am).val()));
 })
 save11am.on("click", function(event){
     event.preventDefault();
-    localStorage.setItem("event11am", JSON.stringify($(input11am).val()));
+    localStorage.setItem("11", JSON.stringify($(input11am).val()));
 })
 save12pm.on("click", function(event){
     event.preventDefault();
-    localStorage.setItem("event12pm", JSON.stringify($(input12pm).val()));
+    localStorage.setItem("12", JSON.stringify($(input12pm).val()));
 })
 save1pm.on("click", function(event){
     event.preventDefault();
-    localStorage.setItem("event1pm", JSON.stringify($(input1pm).val()));
+    localStorage.setItem("13", JSON.stringify($(input1pm).val()));
 })
 save2pm.on("click", function(event){
     event.preventDefault();
-    localStorage.setItem("event2pm", JSON.stringify($(input2pm).val()));
+    localStorage.setItem("14", JSON.stringify($(input2pm).val()));
 })
 save3pm.on("click", function(event){
     event.preventDefault();
-    localStorage.setItem("event3pm", JSON.stringify($(input3pm).val()));
+    localStorage.setItem("15", JSON.stringify($(input3pm).val()));
 })
 save4pm.on("click", function(event){
     event.preventDefault();
-    localStorage.setItem("event4pm", JSON.stringify($(input4pm).val()));
+    localStorage.setItem("16", JSON.stringify($(input4pm).val()));
 })
 save5pm.on("click", function(event){
     event.preventDefault();
-    localStorage.setItem("event5pm", JSON.stringify($(input5pm).val()));
+    localStorage.setItem("17", JSON.stringify($(input5pm).val()));
 })
 
 })
+
+// $(document).on("click", ".saveBtn", function(event){
+//     event.preventDefault();
+//     console.log("this: " + JSON.stringify($(this)));
+
+// })
