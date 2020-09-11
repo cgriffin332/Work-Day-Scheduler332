@@ -20,19 +20,19 @@ https://cgriffin332.github.io/Work-Day-Scheduler332/
 
 When the webpage loads, the user is presented with a work day scheduler complete with the current date, and time slots for each hour of the work day. The time slots are color coded to indicate if the hour slot is in the past(grey), present(red), or future(green).
 
-![Image of Scheduler](./assets/images/)
+![Image of Scheduler](./assets/images/1.png)
 
 The user can input their schedule into each text area and save their information by clicking on the corresponding save button.
 
-![Image of New Saved Info](./assets/images)
+![Image of New Saved Info](./assets/images/2.png)
 
 This information is saved onto local storage, so the info will remain even if the page is refreshed.
 
-![Image of Refreshed Page](./assets/images/)
+![Image of Refreshed Page](./assets/images/3.png)
 
 If the user wants to remove something from the schedule, simply delete the text and press save again.
 
-![Image of Deleted Info](./assets/images/)
+![Image of Deleted Info](./assets/images/4.png)
 
 
 
