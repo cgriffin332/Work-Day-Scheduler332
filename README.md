@@ -18,7 +18,7 @@ https://cgriffin332.github.io/Work-Day-Scheduler332/
 
 ## Usage
 
-When the webpage loads, the user is presented with a work day scheduler complete with the current date, and time slots for each hour of the work day. The time slots are color coded to indicate if the hour slot is in the past(grey), present(red), or future(green).
+When the webpage loads, the user is presented with a work day scheduler, complete with the current date and time slots for each hour of the work day. The time slots are color coded to indicate if the hour slot is in the past(grey), present(red), or future(green).
 
 ![Image of Scheduler](./assets/images/1.png)
 
