@@ -13,7 +13,7 @@ In this project, I have created a daily work day scheduler that allows the user 
 
 ## Installation
 
-Click this link in order to take the timed JavaScript quiz:
+Click this link in order to use the work day scheduler:
 https://cgriffin332.github.io/Work-Day-Scheduler332/
 
 ## Usage
