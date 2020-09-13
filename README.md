@@ -38,7 +38,7 @@ If the user wants to remove something from the schedule, simply delete the text 
 
 ## Credits
 
-This project was asigned to me by my Georgia Tech Bootcamp. I used jQuery and Moment.js to help power the site.
+This project was assigned to me by my Georgia Tech Bootcamp. I used jQuery and Moment.js to help power the site.
 
 ## License
 
