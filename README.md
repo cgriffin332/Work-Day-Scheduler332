@@ -41,8 +41,9 @@ If the user wants to remove something from the schedule, simply delete the text 
 This project was assigned to me by my Georgia Tech Bootcamp. I used jQuery and Moment.js to help power the site.
 
 ## Contact
-LinkedIn: https://www.linkedin.com/in/calvin-griffin-8247521b7/
-Email: cgriffin332@gmail.com
+Calvin Griffin <br />
+Email: cgriffin332@gmail.com <br />
+LinkedIn: https://www.linkedin.com/in/calvin-griffin-8247521b7/ <br />
 Portfolio: https://cgriffin332.github.io/Updated-Portfolio332/
 
 ## License
